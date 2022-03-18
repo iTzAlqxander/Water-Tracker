@@ -13,6 +13,9 @@
 		7E1D7E7E27E4F790009A3FCB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E1D7E7C27E4F790009A3FCB /* Main.storyboard */; };
 		7E1D7E8027E4F793009A3FCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E1D7E7F27E4F793009A3FCB /* Assets.xcassets */; };
 		7E1D7E8327E4F793009A3FCB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E1D7E8127E4F793009A3FCB /* LaunchScreen.storyboard */; };
+		7E1D7E8F27E4FB83009A3FCB /* FirstTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1D7E8E27E4FB83009A3FCB /* FirstTabViewController.swift */; };
+		7E1D7E9127E4FB98009A3FCB /* SecondTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1D7E9027E4FB98009A3FCB /* SecondTabViewController.swift */; };
+		7E1D7E9327E5041B009A3FCB /* VerticalProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1D7E9227E5041B009A3FCB /* VerticalProgressView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		7E1D7E7F27E4F793009A3FCB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E1D7E8227E4F793009A3FCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7E1D7E8427E4F793009A3FCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E1D7E8E27E4FB83009A3FCB /* FirstTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTabViewController.swift; sourceTree = "<group>"; };
+		7E1D7E9027E4FB98009A3FCB /* SecondTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTabViewController.swift; sourceTree = "<group>"; };
+		7E1D7E9227E5041B009A3FCB /* VerticalProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalProgressView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +62,13 @@
 		7E1D7E7527E4F790009A3FCB /* Water Tracker */ = {
 			isa = PBXGroup;
 			children = (
-				7E1D7E7627E4F790009A3FCB /* AppDelegate.swift */,
-				7E1D7E7827E4F790009A3FCB /* SceneDelegate.swift */,
-				7E1D7E7A27E4F790009A3FCB /* ViewController.swift */,
+				7E1D7E8E27E4FB83009A3FCB /* FirstTabViewController.swift */,
+				7E1D7E9027E4FB98009A3FCB /* SecondTabViewController.swift */,
+				7E1D7E9227E5041B009A3FCB /* VerticalProgressView.swift */,
 				7E1D7E7C27E4F790009A3FCB /* Main.storyboard */,
+				7E1D7E7627E4F790009A3FCB /* AppDelegate.swift */,
+				7E1D7E7A27E4F790009A3FCB /* ViewController.swift */,
+				7E1D7E7827E4F790009A3FCB /* SceneDelegate.swift */,
 				7E1D7E7F27E4F793009A3FCB /* Assets.xcassets */,
 				7E1D7E8127E4F793009A3FCB /* LaunchScreen.storyboard */,
 				7E1D7E8427E4F793009A3FCB /* Info.plist */,
@@ -139,6 +148,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E1D7E7B27E4F790009A3FCB /* ViewController.swift in Sources */,
+				7E1D7E9127E4FB98009A3FCB /* SecondTabViewController.swift in Sources */,
+				7E1D7E8F27E4FB83009A3FCB /* FirstTabViewController.swift in Sources */,
+				7E1D7E9327E5041B009A3FCB /* VerticalProgressView.swift in Sources */,
 				7E1D7E7727E4F790009A3FCB /* AppDelegate.swift in Sources */,
 				7E1D7E7927E4F790009A3FCB /* SceneDelegate.swift in Sources */,
 			);
