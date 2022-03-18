@@ -9,23 +9,20 @@ import UIKit
 
 class FirstTabViewController: UIViewController {
     
-    let progressView: VerticalProgressView = {
-        let pv = VerticalProgressView()
-        pv.translatesAutoresizingMaskIntoConstraints = false
-        return pv
-    } ()
+    @IBOutlet weak var progressBar: UIProgressView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupViews()
-    }
-    
-    private func setupViews() {
-        view.addSubview(progressView)
-        progressView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        progressView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        progressView.widthAnchor.constraint(equalToConstant: 250).isActive = true
-        progressView.heightAnchor.constraint(equalToConstant: 30).isActive = true
+
+        progressBar.progress = 0.5
+        progressBar.transform = CGAffineTransform(rotationAngle: .pi / -2)
+        progressBar.transform = progressBar.transform.scaledBy(x: 1.8, y: 55)
+        progressBar.layer.cornerRadius = 8
+        progressBar.clipsToBounds = true
+        progressBar.layer.sublayers![1].cornerRadius = 8
+        progressBar.subviews[1].clipsToBounds = true
         
     }
+
 
 }

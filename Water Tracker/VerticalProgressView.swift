@@ -16,13 +16,23 @@ class VerticalProgressView: UIView {
         return progressView
     }()
 
+//    var progress: CGFloat {
+//        get{
+//            progressView.progress
+//
+//        }
+//    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         
         addSubview(progressView)
         
-        progressView.bounds.size.width = bounds.width
-        progressView.bounds.size.height = bounds.height
+        let width = bounds.width
+        let height = bounds.height
+        
+        progressView.bounds.size.width = height
+        progressView.bounds.size.height = width
         progressView.center.x = bounds.midX
         progressView.center.y = bounds.midY
         
@@ -30,5 +40,10 @@ class VerticalProgressView: UIView {
     }
     private func rotateProgressView() {
         progressView.transform = CGAffineTransform(rotationAngle: .pi * -0.5)
+    }
+    override var intrinsicContentSize: CGSize{
+        get {
+            return CGSize(width: progressView.intrinsicContentSize.height, height: progressView.intrinsicContentSize.width)
+        }
     }
 }
