@@ -14,13 +14,13 @@ class FirstTabViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        progressBar.progress = 0.5
+        progressBar.progress = 0.20
         progressBar.transform = CGAffineTransform(rotationAngle: .pi / -2)
-        progressBar.transform = progressBar.transform.scaledBy(x: 1.8, y: 55)
-        progressBar.layer.cornerRadius = 8
+        progressBar.transform = progressBar.transform.scaledBy(x: 2.84, y: 130)
+//        progressBar.layer.cornerRadius = 8
         progressBar.clipsToBounds = true
-        progressBar.layer.sublayers![1].cornerRadius = 8
-        progressBar.subviews[1].clipsToBounds = true
+//        progressBar.layer.sublayers![1].cornerRadius = 8
+//        progressBar.subviews[1].clipsToBounds = true
         
     }
 
