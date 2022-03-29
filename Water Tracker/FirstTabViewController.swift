@@ -9,18 +9,22 @@ import UIKit
 
 class FirstTabViewController: UIViewController {
     
+    @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
     
+    let progress = 0.75
+    var progress2 = 0
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        progressBar.progress = 0.20
+        progress2 = Int(progress*100)
+        progressLabel.text = "\(progress2)" + "%"
+        
+        progressBar.progress = Float(progress)
         progressBar.transform = CGAffineTransform(rotationAngle: .pi / -2)
-        progressBar.transform = progressBar.transform.scaledBy(x: 2.84, y: 130)
-//        progressBar.layer.cornerRadius = 8
-        progressBar.clipsToBounds = true
-//        progressBar.layer.sublayers![1].cornerRadius = 8
-//        progressBar.subviews[1].clipsToBounds = true
+        progressBar.transform = progressBar.transform.scaledBy(x: 2.96, y: 80)
+        progressBar.layer.cornerRadius = 0
+        progressBar.layer.sublayers![1].cornerRadius = 0
         
     }
 
