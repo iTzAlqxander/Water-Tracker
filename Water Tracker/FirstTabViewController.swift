@@ -12,7 +12,7 @@ class FirstTabViewController: UIViewController {
     @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
     
-    let progress = 0.75
+    var progress = 0
     var progress2 = 0
     override func viewDidLoad() {
         super.viewDidLoad()
