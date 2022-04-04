@@ -9,6 +9,7 @@ import UIKit
 
 class FirstTabViewController: UIViewController {
     
+    let userDefaults = UserDefaults.standard
     @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
     
@@ -27,6 +28,12 @@ class FirstTabViewController: UIViewController {
         progressBar.layer.sublayers![1].cornerRadius = 0
         
     }
-
-
+    @IBAction func button(_ sender: UIButton) {
+        
+        let cupsBack = userDefaults.string(forKey: "Cups")
+        
+    }
+    
+    
 }
+    

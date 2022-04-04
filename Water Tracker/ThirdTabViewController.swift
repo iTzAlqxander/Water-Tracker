@@ -9,6 +9,8 @@ import UIKit
 
 class ThirdTabViewController: UIViewController {
     
+    let userDefaults = UserDefaults.standard
+
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var ouncesLabel: UILabel!
     @IBOutlet weak var displayLabel: UILabel!
@@ -35,6 +37,8 @@ class ThirdTabViewController: UIViewController {
         displayLabel.text = "\(n)" + " C."
         ouncesLabel.text = "\(m)" + " Oz."
         
+        let cups = displayLabel.text
+        
         let b = Int(slider.value) % 101
         let c = Double(b)
         let d = c/100
@@ -47,7 +51,9 @@ class ThirdTabViewController: UIViewController {
         progressBar.progress = Float(d)
         displayLabel.frame.origin = CGPoint (x:96, y:y)
         ouncesLabel.frame.origin = CGPoint (x:96, y:z)
+        
+        userDefaults.set(cups, forKey: "Cups")
+        
     }
     
-
 }
