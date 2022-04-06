@@ -26,14 +26,17 @@ class FirstTabViewController: UIViewController {
         progressBar.transform = progressBar.transform.scaledBy(x: 2.96, y: 80)
         progressBar.layer.cornerRadius = 0
         progressBar.layer.sublayers![1].cornerRadius = 0
-        
-    }
-    @IBAction func button(_ sender: UIButton) {
-        
-        let cupsBack = userDefaults.string(forKey: "Cups")
-        
-    }
-    
-    
+
+        //progress2 = cupsBack
+            
 }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        let cupsBack = userDefaults.double(forKey: "Cups")
+        //print(cupsBack)
+        let cB = cupsBack/100.0
+        progressBar.progress = Float(cB)
+        
+        let lCupsBack = Double(round(100*cupsBack)/100)
+        progressLabel.text = "\(lCupsBack)" + "%"
+    }
+}
