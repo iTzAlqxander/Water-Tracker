@@ -39,12 +39,11 @@ class FirstTabViewController: UIViewController {
     
     @IBAction func setsGoal(_ sender: UIButton) {
         StringGoal = setGoal.text!
-        goalLabel.text = StringGoal + " Cu."
+        goalLabel.text = StringGoal + " C."
     }
     
     override func viewWillAppear(_ animated: Bool) {
         let cupsBack = userDefaults.double(forKey: "Cups")
-        let cB = cupsBack/100.0
         let lCupsBack = Double(round(100*cupsBack)/100)
         
         /*
@@ -64,7 +63,7 @@ class FirstTabViewController: UIViewController {
         Once the user reaches a progress of 100%, alert pops up to reset
         all the progress to start over
         */
-        if lCupsBack >= 100{
+        if percentage >= 100{
             let alert = UIAlertController(title: "Congrats!", message: "You have hit your goal!", preferredStyle: .alert)
             let reset = UIAlertAction(title: "Reset Progress", style: .default, handler: {action in
                 UserDefaults.resetStandardUserDefaults()
