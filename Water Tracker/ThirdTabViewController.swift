@@ -7,6 +7,8 @@
 
 import UIKit
 
+var numbers: [Double] = []
+
 class ThirdTabViewController: UIViewController {
     
     let userDefaults = UserDefaults.standard
@@ -21,9 +23,8 @@ class ThirdTabViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        //Transforming  the slider and progress bar
         slider.transform = CGAffineTransform(rotationAngle: .pi / -2)
-        
-  
         progressBar.transform = CGAffineTransform(rotationAngle: .pi / -2)
         progressBar.transform = progressBar.transform.scaledBy(x: 2.96, y: 80)
         progressBar.layer.cornerRadius = 0
@@ -35,18 +36,32 @@ class ThirdTabViewController: UIViewController {
         
     @IBAction func sliderSlid(_ sender: UISlider) {
         
+        /*
+        n = cups
+        m = ounces (cups converted)
+        */
         let n = Int(slider.value) % 101
         let m = n * 8
+        
+        /*
+        displays cups & ounces in labels
+        */
         displayLabel.text = "\(n)" + " C."
         ouncesLabel.text = "\(m)" + " Oz."
         
-        
+        /*
+        gets the slider value and converts it to a double;
+        need to divide c by 100 (slider value in double form)
+        because the slider min & max is 0-1;
+        changes the y-coordinate of labels so that they
+        move depending w/ the slider, depending on what the value
+        of the slider is
+        */
         let b = Int(slider.value) % 101
         let c = Double(b)
         num = c/100
-        //print(d)
         let x = Double(b) * 3.5
-        //print(x)
+        
         let y = 574 - x
         let z = 608 - x
         
@@ -54,17 +69,30 @@ class ThirdTabViewController: UIViewController {
         displayLabel.frame.origin = CGPoint (x:96, y:y)
         ouncesLabel.frame.origin = CGPoint (x:96, y:z)
         
-        //print(n)
+        /*
+        takes cups (n), which was declared on line 43,
+        and turns it into a double as I want to transfer a double
+        through the userDefaults to get an accurate %
+        */
         a = Double(n)
         
     }
     @IBAction func addButton(_ sender: UIButton) {
+        /*
+        appends to an array containing all the numbers added by the
+        user;
+        sums up the array and puts it into userDefaults
+        */
+        numbers.append(a)
+        let sum = numbers.reduce(0, +)
+        userDefaults.set(sum, forKey: "Cups")
+        }
         
-        userDefaults.set(a, forKey: "Cups")
-        
-    }
     override func viewWillAppear(_ animated: Bool) {
-        
+        /*
+        all of this just sets the view back to an unedited
+        original version
+        */
         progressBar.progress = 0
         slider.value = 0
         displayLabel.text = "0 C."
